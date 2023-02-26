@@ -1,0 +1,21 @@
+FUNCTION is_palindrome (chain : STRING[]) : STRING
+VAR
+ n : INTEGER;
+ res_yes : STRING[] := "it's a palindrome"
+ res_no : STRING[] := "it's not a palindrome"
+ 
+BEGIN
+ IF (n = 1 or n = 0) THEN
+  RETURN res_yes;
+ ELSE
+  IF (chain [0] = chain [-1]) THEN
+   Del chain [0];
+   Del chain [-1];
+   RETURN is_palindrome(chain);
+  ELSE
+   RETURN res_no
+  END_IF
+
+ END_IF
+ 
+END
